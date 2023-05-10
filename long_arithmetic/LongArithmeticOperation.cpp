@@ -121,7 +121,6 @@ Value* sum(Value* digit1, Value* digit2)
 		result = abs_sub(digit1, digit2);
 		if (!(comparison(digit1, digit2)))
 			result->sign = '-';
-		return (result);
 	}
 
 	if (digit1->sign == '-' && digit2->sign == '+')
@@ -129,15 +128,12 @@ Value* sum(Value* digit1, Value* digit2)
 		result = abs_sub(digit1, digit2);
 		if (!(comparison(digit2, digit1)))
 			result->sign = '-';
-		return (result);
 	}
 
 	if (digit1->sign == '-' && digit2->sign == '-')
 	{
 		result = abs_sum(digit1, digit2);
 		result->sign = '-';
-
-		return (result);
 	}
 
 	return (result);
@@ -146,6 +142,29 @@ Value* sum(Value* digit1, Value* digit2)
 Value* sub(Value* digit1, Value* digit2)
 {
 	Value* result = new Value();
+
+	if (digit1->sign == '+' && digit2->sign == '+')
+	{
+		result = abs_sub(digit1, digit2);
+		if (!(comparison(digit1, digit2)))
+			result->sign = '-';
+	}
+
+	if (digit1->sign == '+' && digit2->sign == '-')
+		return (abs_sum(digit1, digit2));
+
+	if (digit1->sign == '-' && digit2->sign == '+')
+	{
+		result = abs_sum(digit1, digit2);
+		result->sign = '-';
+	}
+
+	if (digit1->sign == '-' && digit2->sign == '-')
+	{
+		result = abs_sub(digit1, digit2);
+		if (!(comparison(digit2, digit1)))
+			result->sign = '-';
+	}
 
 	return (result);
 }
