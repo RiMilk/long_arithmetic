@@ -1,6 +1,10 @@
 ﻿#include <iostream>
+#include "Value.h"
 
 int main()
 {
-    std::cout << "Hello World!\n";
+    std::string tmp;
+    std::cin >> tmp;
+
+    Value* data = new Value(tmp);
 }

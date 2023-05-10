@@ -9,13 +9,16 @@ class Value {
 
 public:
 
-	Value();
 	Value(std::string digit);
-	virtual ~Value() {};
 
-	const char sign;
-	const std::vector<int> data;
+	virtual ~Value();
 
+	char *sign;
+	std::vector<int> *data;
+
+private:
+
+	bool chaeckValidData(std::string data);
 };
 
 #endif //VALUE_H
