@@ -92,10 +92,53 @@ Value* abs_sub(Value* digit1, Value* digit2)
 	return (result);
 }
 
+bool	comparison(Value* digit1, Value* digit2)
+{
+	if (digit1->data.size() > digit2->data.size())
+		return (true);
+
+	if (digit1->data.size() < digit2->data.size())
+		return (false);
+	
+	int iter = digit1->data.size() - 1;
+	while (iter >= 0)
+	{
+		if (digit1->data[iter] < digit2->data[iter++])
+			return (false);
+	}
+	return (true);
+}
+
 Value* sum(Value* digit1, Value* digit2)
 {
 	Value* result = new Value();
 
+	if (digit1->sign == '+' && digit2->sign == '+')
+		return (abs_sum(digit1, digit2));
+
+	if (digit1->sign == '+' && digit2->sign == '-')
+	{
+		result = abs_sub(digit1, digit2);
+		if (!(comparison(digit1, digit2)))
+			result->sign = '-';
+		return (result);
+	}
+
+	if (digit1->sign == '-' && digit2->sign == '+')
+	{
+		result = abs_sub(digit1, digit2);
+		if (!(comparison(digit2, digit1)))
+			result->sign = '-';
+		return (result);
+	}
+
+	if (digit1->sign == '-' && digit2->sign == '-')
+	{
+		result = abs_sum(digit1, digit2);
+		result->sign = '-';
+
+		return (result);
+	}
 
 	return (result);
 }
