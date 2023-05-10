@@ -9,12 +9,13 @@ class Value {
 
 public:
 
+	Value();
 	Value(std::string digit);
 
 	virtual ~Value();
 
-	char *sign;
-	std::vector<int> *data;
+	char sign;
+	std::vector<int> data;
 
 private:
 

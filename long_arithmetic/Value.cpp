@@ -1,5 +1,10 @@
 #include "Value.h"
 
+Value::Value()
+{
+
+}
+
 Value::Value(std::string digit)
 {
 	if (chaeckValidData(digit) == true)
@@ -10,14 +15,14 @@ Value::Value(std::string digit)
 			iter++;
 
 			if (digit[0] == '+')
-				*sign = '+';
+				sign = '+';
 
 			if (digit[0] == '-')
-				*sign = '-';
+				sign = '-';
 		}
 
 		while (iter < digit.length())
-			data->push_back(digit[iter++] - '0');
+			data.push_back(digit[iter++] - '0');
 
 	}
 
@@ -38,6 +43,6 @@ bool Value::chaeckValidData(std::string data)
 
 Value::~Value()
 {
-	delete sign;
-	delete data;
+	delete &sign;
+	delete &data;
 }
