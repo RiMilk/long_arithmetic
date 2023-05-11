@@ -32,65 +32,63 @@ Value* abs_sum(Value* digit1, Value* digit2)
 	for (int i = value_res.size() - 1; i >= 0; i--)
 		if (value_res[i] >= 10)
 		{
+			value_res[i] -= 10;
 			if (i != 0)
-			{
-				value_res[i] -= 10;
 				value_res[i - 1]++;
-			}
 			else
-			{
-				value_res[0] -= 10;
 				value_res.insert(value_res.begin(), 1);
-			}
 		}
 
 	Value* result = new Value('+', value_res, value_res.size());
 	return (result);
 }
 
+//TODO del first null
 Value* abs_sub(Value* digit1, Value* digit2)
 {
-	Value* result = new Value();
 
-	int len1 = digit1->data.size() - 1;
-	int len2 = digit2->data.size() - 1;
+	std::vector<int> value_res;
 
-	if (len1 > len2)
+	if ((digit1->size >= digit2->size) && (comparison(digit1, digit2) == true))
 	{
-		for (int i = 0; i <= len1; i++)
-			result->data.push_back(digit1->data[i]);
+		for (int i = 0; i < digit1->size; i++)
+			value_res.push_back(digit1->data[i]);
 
-		for (int i = len2; i >= 0; i--)
+		size_t iter = digit1->size - 1;
+		for (int i = digit2->size - 1; i >= 0; i--)
 		{
-			result->data[len1] -= digit2->data[i];
-			len1--;
+			value_res[iter] -= digit2->data[i];
+			iter--;
 		}
 	}
 	else
 	{
-		for (int i = 0; i <= len2; i++)
-			result->data.push_back(digit2->data[i]);
+		for (int i = 0; i < digit2->size; i++)
+			value_res.push_back(digit2->data[i]);
 
-		for (int i = len1; i >= 0; i--)
+		size_t iter = digit2->size - 1;
+		for (int i = digit1->size - 1; i >= 0; i--)
 		{
-			result->data[len2] -= digit1->data[i];
-			len2 -= 1;
+			value_res[iter] -= digit1->data[i];
+			iter--;
 		}
 	}
 
-	for (int i = result->data.size() - 1; i > 0; i--)
-		if (result->data[i] >= 10)
+	for (int i = value_res.size() - 1; i >= 0; i--)
+		if (value_res[i] < 0)
 		{
-			result->data[i] -= 10;
-			result->data[i - 1]--;
+			if (i != 0)
+			{
+				value_res[i] = 10 + value_res[i];
+				value_res[i - 1]--;
+			}
+			else
+			{
+				value_res[0] = 10 + value_res[0];
+			}
 		}
 
-	if (result->data[0] >= 10)
-	{
-		result->data[0] -= 10;
-		result->data.insert(result->data.begin(), 1);
-	}
-
+	Value* result = new Value('+', value_res, value_res.size());
 	return (result);
 }
 
