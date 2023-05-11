@@ -5,15 +5,31 @@
 
 int main(int count, char* params[])
 {
-    Value* data = new Value(params[1]);
-    Value* data1 = new Value(params[2]);
+    try
+    {
+        std::string val1, val2;
 
-    Value* data4 = summ(data, data1);
-    std::cout << "SUMM :";
-    data4->print();
+        if (count == 3)
+        {
+            val1 = params[1];
+            val2 = params[2];
+        }
+        else
+            std::cin >> val1 >> val2;
 
-    Value* data3 = subb(data, data1);
-    std::cout << "SUBB :";
-    data3->print();
+        Value* data = new Value(val1);
+        Value* data1 = new Value(val2);
 
+        Value* data4 = summ(data, data1);
+        std::cout << "SUMM :";
+        data4->print();
+
+        Value* data3 = subb(data, data1);
+        std::cout << "SUBB :";
+        data3->print();
+    }
+    catch (std::string error_message)
+    {
+        std::cout << error_message << std::endl;
+    }
 }
