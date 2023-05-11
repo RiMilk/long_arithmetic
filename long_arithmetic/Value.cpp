@@ -20,10 +20,13 @@ Value::Value(std::string digit)
 			if (digit[0] == '-')
 				sign = '-';
 		}
+		else
+			sign = '+';
 
 		while (iter < digit.length())
 			data.push_back(digit[iter++] - '0');
 
+		size = data.size();
 	}
 
 }
@@ -43,6 +46,22 @@ bool Value::chaeckValidData(std::string data)
 
 Value::~Value()
 {
+	delete &size;
 	delete &sign;
 	delete &data;
+}
+
+void Value::print()
+{
+	if (sign == '-')
+		std::cout << sign;
+
+	int iter = 0;
+	while (iter < data.size())
+	{
+		std::cout << data[iter];
+		iter++;
+	}
+
+	std::cout << std::endl;
 }

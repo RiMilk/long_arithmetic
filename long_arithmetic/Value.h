@@ -14,9 +14,11 @@ public:
 
 	virtual ~Value();
 
+	int size;
 	char sign;
 	std::vector<int> data;
 
+	void print();
 private:
 
 	bool chaeckValidData(std::string data);

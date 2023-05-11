@@ -4,28 +4,29 @@ Value* abs_sum(Value* digit1, Value* digit2)
 {
 	Value* result = new Value();
 
-	result->sign = '+';
-
 	int len1 = digit1->data.size() - 1;
 	int len2 = digit2->data.size() - 1;
 
+
 	if (len1 > len2)
 	{
-		result->data = std::move(digit1->data);
-		while (len2 >= 0)
+		for (int i = 0; i <= len1; i++)
+			result->data.push_back(digit1->data[i]);
+
+		for (int i = len2; i >= 0; i--)
 		{
-			result->data[len1] += digit2->data[len2];
+			result->data[len1] += digit2->data[i];
 			len1--;
-			len2--;
 		}
 	}
 	else
 	{
-		result->data = std::move(digit2->data);
-		while (len1 >= 0)
+		for (int i = 0; i <= len2; i++)
+			result->data.push_back(digit2->data[i]);
+
+		for(int i = len1; i >= 0; i--)
 		{
-			result->data[len2] += digit1->data[len1];
-			len1--;
+			result->data[len2] += digit1->data[i];
 			len2--;
 		}
 	}
@@ -50,29 +51,29 @@ Value* abs_sub(Value* digit1, Value* digit2)
 {
 	Value* result = new Value();
 
-	result->sign = '+';
-
 	int len1 = digit1->data.size() - 1;
 	int len2 = digit2->data.size() - 1;
 
 	if (len1 > len2)
 	{
-		result->data = std::move(digit1->data);
-		while (len2 >= 0)
+		for (int i = 0; i <= len1; i++)
+			result->data.push_back(digit1->data[i]);
+
+		for (int i = len2; i >= 0; i--)
 		{
-			result->data[len1] -= digit2->data[len2];
+			result->data[len1] -= digit2->data[i];
 			len1--;
-			len2--;
 		}
 	}
 	else
 	{
-		result->data = std::move(digit2->data);
-		while (len1 >= 0)
+		for (int i = 0; i <= len2; i++)
+			result->data.push_back(digit2->data[i]);
+
+		for (int i = len1; i >= 0; i--)
 		{
-			result->data[len2] -= digit1->data[len1];
-			len1--;
-			len2--;
+			result->data[len2] -= digit1->data[i];
+			len2 -= 1;
 		}
 	}
 
@@ -99,7 +100,7 @@ bool	comparison(Value* digit1, Value* digit2)
 
 	if (digit1->data.size() < digit2->data.size())
 		return (false);
-	
+
 	int iter = digit1->data.size() - 1;
 	while (iter >= 0)
 	{
@@ -109,7 +110,7 @@ bool	comparison(Value* digit1, Value* digit2)
 	return (true);
 }
 
-Value* sum(Value* digit1, Value* digit2)
+Value* summ(Value* digit1, Value* digit2)
 {
 	Value* result = new Value();
 
@@ -139,7 +140,7 @@ Value* sum(Value* digit1, Value* digit2)
 	return (result);
 }
 
-Value* sub(Value* digit1, Value* digit2)
+Value* subb(Value* digit1, Value* digit2)
 {
 	Value* result = new Value();
 
