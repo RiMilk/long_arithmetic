@@ -11,14 +11,16 @@ public:
 
 	Value();
 	Value(std::string digit);
+	Value(char sign, std::vector<int> digits, size_t size);
 
-	virtual ~Value();
+	~Value();
 
-	int size;
-	char sign;
-	std::vector<int> data;
+	size_t size; 
+	char sign; 
+	std::vector<int> data; 
 
 	void print();
+
 private:
 
 	bool chaeckValidData(std::string data);
