@@ -21,12 +21,10 @@ int main(int count, char* params[])
         Value* data1 = new Value(val2);
 
         Value* data4 = summ(data, data1);
-        std::cout << "SUMM :";
-        data4->print();
+        std::cout << "SUMM :" << data4->convertToString() << std::endl;
 
         Value* data3 = subb(data, data1);
-        std::cout << "SUBB :";
-        data3->print();
+        std::cout << "SUBB :" << data3->convertToString() << std::endl;
     }
     catch (std::string error_message)
     {

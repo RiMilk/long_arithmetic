@@ -1,2 +1,12 @@
-﻿  long_arithmetic.cpp
+﻿  LongArithmeticOperation.cpp
+C:\long_arithmetic\long_arithmetic\LongArithmeticOperation.cpp(13,3): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
+C:\long_arithmetic\long_arithmetic\LongArithmeticOperation.cpp(25,3): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
+C:\long_arithmetic\long_arithmetic\LongArithmeticOperation.cpp(32,2): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
+C:\long_arithmetic\long_arithmetic\LongArithmeticOperation.cpp(58,3): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
+C:\long_arithmetic\long_arithmetic\LongArithmeticOperation.cpp(70,3): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
+C:\long_arithmetic\long_arithmetic\LongArithmeticOperation.cpp(77,2): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
+C:\long_arithmetic\long_arithmetic\LongArithmeticOperation.cpp(103,36): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
+  long_arithmetic.cpp
+  Value.cpp
+  Создание кода...
   long_arithmetic.vcxproj -> C:\long_arithmetic\x64\Debug\long_arithmetic.exe

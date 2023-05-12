@@ -4,7 +4,6 @@
 #include <iostream>
 #include <vector>
 
-
 class Value {
 
 public:
@@ -17,9 +16,10 @@ public:
 
 	size_t size; 
 	char sign; 
-	std::vector<int> data; 
+	std::vector<int> data;
 
 	void print();
+	std::string convertToString();
 
 private:
 

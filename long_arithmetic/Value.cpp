@@ -5,12 +5,18 @@ Value::Value()
 
 }
 
-//TODO Check valid
 Value::Value(char sign, std::vector<int> digits, size_t size)
 {
-	this->size = size;
-	this->data = digits;
-	this->sign = sign;
+	try
+	{
+		this->size = size;
+		this->data = digits;
+		this->sign = sign;
+	}
+	catch (std::string error_message)
+	{
+		std::cout << error_message << std::endl;
+	}
 }
 
 Value::Value(std::string digit)
@@ -77,3 +83,17 @@ void Value::print()
 
 	std::cout << std::endl;
 }
+
+std::string Value::convertToString()
+{
+	std::string result;
+
+	if (sign == '-')
+		result += "-";
+
+	for (int i = 0; i < size; i++)
+		result += data[i] + '0';
+
+	return (result);
+}
+
