@@ -23,14 +23,14 @@ Visual studio and compile via development environment.
 
 ### Set of methods
 ```c++
-> Value* abs_sum(Value* val_1, Value* val_2);
+> Value* abs_sum(const Value* val_1,const Value* val_2);
 ```
 ```c++
-> Value* abs_sub(Value* val_1, Value* val_2);
+> Value* abs_sub(const Value* val_1,const Value* val_2);
 ```
 ```c++
-> Value* summ(Value* val_1, Value* val_2);
+> Value* summ(const Value* val_1,const Value* val_2);
 ```
 ```c++
-> Value* subb(Value* val_1, Value* val_2);
+> Value* subb(const Value* val_1,const Value* val_2);
 ```
