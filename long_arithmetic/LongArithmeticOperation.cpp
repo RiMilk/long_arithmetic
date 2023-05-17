@@ -1,6 +1,6 @@
 #include "LongArithmeticOperation.h"
 
-Value* abs_sum(Value* digit1, Value* digit2)
+Value* abs_sum(const Value* digit1,const Value* digit2)
 {
 	std::vector<int> value_res;
 
@@ -44,7 +44,7 @@ Value* abs_sum(Value* digit1, Value* digit2)
 }
 
 //TODO del first null
-Value* abs_sub(Value* digit1, Value* digit2)
+Value* abs_sub(const Value* digit1,const Value* digit2)
 {
 
 	std::vector<int> value_res;
@@ -92,7 +92,7 @@ Value* abs_sub(Value* digit1, Value* digit2)
 	return (result);
 }
 
-bool	comparison(Value* digit1, Value* digit2)
+bool	comparison(const Value* digit1,const Value* digit2)
 {
 	if (digit1->data.size() > digit2->data.size())
 		return (true);
@@ -109,7 +109,7 @@ bool	comparison(Value* digit1, Value* digit2)
 	return (true);
 }
 
-Value* summ(Value* digit1, Value* digit2)
+Value* summ(const Value* digit1,const Value* digit2)
 {
 	Value* result = new Value();
 
@@ -139,7 +139,7 @@ Value* summ(Value* digit1, Value* digit2)
 	return (result);
 }
 
-Value* subb(Value* digit1, Value* digit2)
+Value* subb(const Value* digit1,const Value* digit2)
 {
 	Value* result = new Value();
 

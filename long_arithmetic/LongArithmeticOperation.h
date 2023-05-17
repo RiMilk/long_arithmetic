@@ -3,11 +3,11 @@
 
 #include "Value.h"
 
-Value*	abs_sum(Value* digit1, Value* digit2);
-Value*	abs_sub(Value* digit1, Value* digit2);
+Value*	abs_sum(const Value* digit1, const Value* digit2);
+Value*	abs_sub(const Value* digit1, const Value* digit2);
 
-Value*	summ(Value *digit1, Value *digit2);
-Value*	subb(Value* digit1, Value* digit2);
-bool	comparison(Value* digit1, Value* digit2);
+Value*	summ(const Value *digit1, const Value *digit2);
+Value*	subb(const Value* digit1, const Value* digit2);
+bool	comparison(const Value* digit1, const Value* digit2);
 
 #endif

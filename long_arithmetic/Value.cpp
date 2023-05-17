@@ -2,7 +2,9 @@
 
 Value::Value()
 {
-
+	this->size = 1;
+	this->data = {0};
+	this->sign = '+';
 }
 
 Value::Value(char sign, std::vector<int> digits, size_t size)
