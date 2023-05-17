@@ -1,4 +1,4 @@
-# long_arithmetic
+# Long Arithmetic
 Implementation of long arithmetic in C++. Build via make or visual studio.
 
 ### 1 variant
